@@ -11,11 +11,8 @@ user_card_number_str = str(user_card_number)
 playing = True
 i = 0
 
-#class Player:
-
-
 #stores card information
-class Card:
+class Game:
     #setting value for each card, so can say if the cards value is higher than the other card you win
     #def __init__(self, name, val):
     ##    self.val = val
@@ -139,8 +136,7 @@ class Card:
     #print(random_card_val)
     #print(random.choice(str(card_value)))
 #game functionality
-class Game(Card):
-    print("test card")
+
     # while playing == True:
     #     computer_hand = random_card_val
     #     user_hand = random_card_val
@@ -150,5 +146,3 @@ class Game(Card):
         #playing = False
 
 #adds or removes from deck if you win or lose
-class Deck:
-    print("test Deck")
