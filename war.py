@@ -22,11 +22,6 @@ class Card:
         name_list_player = random.choice(
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
         name_list_player_str = str(name_list_player)
-
-        name_list_computer = random.choice(
-        ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"])
-        name_list_computer_int = int(name_list_computer)
-
         if(name_list_player_str == "11"):
             name_list_player_str = "J"
         elif(name_list_player_str == "12"):
@@ -36,18 +31,31 @@ class Card:
         elif(name_list_player_str == "14"):
             name_list_player_str = "A"
 
-        if(name_list_player > name_list_computer_int):
+        name_list_computer = random.choice(
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+        name_list_computer_str = str(name_list_computer)
+
+        if(name_list_computer_str == "11"):
+            name_list_computer_str = "J"
+        elif(name_list_computer_str == "12"):
+            name_list_computer_str = "Q"
+        elif(name_list_computer_str == "13"):
+            name_list_computer_str = "K"
+        elif(name_list_computer_str == "14"):
+            name_list_computer_str = "A"
+
+        if(name_list_player > name_list_computer):
             user_card_number = user_card_number + 2
             computer_card_number = computer_card_number - 2
 
-            print("You won this hand! your " + name_list_player_str + " card was higher than the computer's " + name_list_computer + " card")
+            print("You won this hand! your " + name_list_player_str + " card was higher than the computer's " + name_list_computer_str + " card")
             print("You currently have " + str(user_card_number) + " cards")
             print("The computer currently has " + str(computer_card_number) + " cards")
-        elif(name_list_player < name_list_computer_int):
+        elif(name_list_player < name_list_computer):
             user_card_number = user_card_number - 2
             computer_card_number = computer_card_number + 2
 
-            print("You lost this hand! your " + name_list_player_str + " card was lower than the computer's " + name_list_computer + " card")
+            print("You lost this hand! your " + name_list_player_str + " card was lower than the computer's " + name_list_computer_str + " card")
             print("You currently have " + str(user_card_number) + " cards")
             print("The computer currently has " + str(computer_card_number) + " cards")
         else:
