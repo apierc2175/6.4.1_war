@@ -1,6 +1,8 @@
 #give each player a random card, if the card value is higher than the other persons then lower the count of loser by two and incease winner by two, when one person has 0 or less they lose, then implement tie system
 #instead of you say the user_name
 #seperate in classes
+from threading import Thread, Event
+import time
 import random
 #amount of cards each have, if one person gets 52 cards then they win, if you win round your count increases by two
 computer_card_number = 26
@@ -98,10 +100,10 @@ class Game:
                 print("The computer currently has " + str(computer_card_number) + " cards")
 
         if(computer_card_number < 1):
-            print("YOU WIN :)")
+            print(user_name + " WINS :)")
             playing = False
         elif(user_card_number < 1):
-            print("YOU LOSE :(")
+            print(user_name + " LOSES :(")
             playing = False
 
     #name_value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
@@ -136,13 +138,5 @@ class Game:
     #print(random_card_val)
     #print(random.choice(str(card_value)))
 #game functionality
-
-    # while playing == True:
-    #     computer_hand = random_card_val
-    #     user_hand = random_card_val
-    #     if(computer_hand == user_hand):
-    #         print("ahh")
-
-        #playing = False
 
 #adds or removes from deck if you win or lose
