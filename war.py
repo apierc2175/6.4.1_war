@@ -1,4 +1,6 @@
 #give each player a random card, if the card value is higher than the other persons then lower the count of loser by two and incease winner by two, when one person has 0 or less they lose, then implement tie system
+#instead of you say the user_name
+#seperate in classes
 import random
 #amount of cards each have, if one person gets 52 cards then they win, if you win round your count increases by two
 computer_card_number = 26
@@ -9,15 +11,16 @@ user_card_number_str = str(user_card_number)
 playing = True
 i = 0
 
-class Player:
-    user_name = input("Please type your name here: ")
-    print("User Name: " + user_name)
+#class Player:
+
 
 #stores card information
 class Card:
     #setting value for each card, so can say if the cards value is higher than the other card you win
     #def __init__(self, name, val):
     ##    self.val = val
+    user_name = input("Please type your name here: ")
+    print("User Name: " + user_name)
     while playing == True:
         name_list_player = random.choice(
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
@@ -48,15 +51,15 @@ class Card:
             user_card_number = user_card_number + 1
             computer_card_number = computer_card_number - 1
 
-            print("You won this hand! your " + name_list_player_str + " card was higher than the computer's " + name_list_computer_str + " card")
-            print("You currently have " + str(user_card_number) + " cards")
+            print(user_name + " won this hand! "  + user_name + "'s " + name_list_player_str + " card was higher than the computer's " + name_list_computer_str + " card")
+            print(user_name + " currently has " + str(user_card_number) + " cards")
             print("The computer currently has " + str(computer_card_number) + " cards")
         elif(name_list_player < name_list_computer):
             user_card_number = user_card_number - 1
             computer_card_number = computer_card_number + 1
 
-            print("You lost this hand! your " + name_list_player_str + " card was lower than the computer's " + name_list_computer_str + " card")
-            print("You currently have " + str(user_card_number) + " cards")
+            print(user_name + " lost this hand! " + user_name + "'s " + name_list_player_str + " card was lower than the computer's " + name_list_computer_str + " card")
+            print(user_name + " currently has " + str(user_card_number) + " cards")
             print("The computer currently has " + str(computer_card_number) + " cards")
         else:
             print("there was a tie!")
@@ -86,15 +89,15 @@ class Card:
                 user_card_number = user_card_number + 3
                 computer_card_number = computer_card_number - 3
 
-                print("You won this hand! your " + name_list_player_tie_str + " card was higher than the computer's " + name_list_computer_tie_str + " card")
-                print("You currently have " + str(user_card_number) + " cards")
+                print(user_name + " won this hand! " + user_name + "'s " + name_list_player_tie_str + " card was higher than the computer's " + name_list_computer_tie_str + " card")
+                print(user_name + " currently has " + str(user_card_number) + " cards")
                 print("The computer currently has " + str(computer_card_number) + " cards")
             elif(name_list_player_tie < name_list_computer_tie):
                 user_card_number = user_card_number - 3
                 computer_card_number = computer_card_number + 3
 
-                print("You lost this hand! your " + name_list_player_tie_str + " card was lower than the computer's " + name_list_computer_tie_str + " card")
-                print("You currently have " + str(user_card_number) + " cards")
+                print(user_name + " lost this hand! " + user_name + "'s " + name_list_player_tie_str + " card was lower than the computer's " + name_list_computer_tie_str + " card")
+                print(user_name + " currently has " + str(user_card_number) + " cards")
                 print("The computer currently has " + str(computer_card_number) + " cards")
 
         if(computer_card_number < 1):
