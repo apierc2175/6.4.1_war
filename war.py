@@ -45,25 +45,62 @@ class Card:
             name_list_computer_str = "A"
 
         if(name_list_player > name_list_computer):
-            user_card_number = user_card_number + 2
-            computer_card_number = computer_card_number - 2
+            user_card_number = user_card_number + 1
+            computer_card_number = computer_card_number - 1
 
             print("You won this hand! your " + name_list_player_str + " card was higher than the computer's " + name_list_computer_str + " card")
             print("You currently have " + str(user_card_number) + " cards")
             print("The computer currently has " + str(computer_card_number) + " cards")
         elif(name_list_player < name_list_computer):
-            user_card_number = user_card_number - 2
-            computer_card_number = computer_card_number + 2
+            user_card_number = user_card_number - 1
+            computer_card_number = computer_card_number + 1
 
             print("You lost this hand! your " + name_list_player_str + " card was lower than the computer's " + name_list_computer_str + " card")
             print("You currently have " + str(user_card_number) + " cards")
             print("The computer currently has " + str(computer_card_number) + " cards")
         else:
             print("there was a tie!")
-        if(computer_card_number == 0):
+            name_list_player_tie = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+            name_list_player_tie_str = str(name_list_player_tie)
+            if(name_list_player_tie_str == "11"):
+                name_list_player_tie_str = "J"
+            elif(name_list_player_tie_str == "12"):
+                name_list_player_tie_str = "Q"
+            elif(name_list_player_tie_str == "13"):
+                name_list_player_tie_str = "K"
+            elif(name_list_player_tie_str == "14"):
+                name_list_player_tie_str = "A"
+
+            name_list_computer_tie = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+            name_list_computer_tie_str = str(name_list_computer_tie)
+            if(name_list_computer_tie_str == "11"):
+                name_list_computer_tie_str = "J"
+            elif(name_list_computer_tie_str == "12"):
+                name_list_computer_tie_str = "Q"
+            elif(name_list_computer_tie_str == "13"):
+                name_list_computer_tie_str = "K"
+            elif(name_list_computer_tie_str == "14"):
+                name_list_computer_tie_str = "A"
+
+            if(name_list_player_tie > name_list_computer_tie):
+                user_card_number = user_card_number + 3
+                computer_card_number = computer_card_number - 3
+
+                print("You won this hand! your " + name_list_player_tie_str + " card was higher than the computer's " + name_list_computer_tie_str + " card")
+                print("You currently have " + str(user_card_number) + " cards")
+                print("The computer currently has " + str(computer_card_number) + " cards")
+            elif(name_list_player_tie < name_list_computer_tie):
+                user_card_number = user_card_number - 3
+                computer_card_number = computer_card_number + 3
+
+                print("You lost this hand! your " + name_list_player_tie_str + " card was lower than the computer's " + name_list_computer_tie_str + " card")
+                print("You currently have " + str(user_card_number) + " cards")
+                print("The computer currently has " + str(computer_card_number) + " cards")
+
+        if(computer_card_number < 1):
             print("YOU WIN :)")
             playing = False
-        elif(user_card_number == 0):
+        elif(user_card_number < 1):
             print("YOU LOSE :(")
             playing = False
 
